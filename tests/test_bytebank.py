@@ -6,10 +6,12 @@ class TestBytebank:
         employee = Employee('John', '11/11/2000', 1000)
         assert employee.age() == 23
 
+    @pytest.mark.calculate_credits 
     def test_calculate_credits(self):
         employee = Employee('John', '11/11/2000', 1000)
         assert employee.calculate_credits() == 100
 
+    @pytest.mark.calculate_credits 
     def test_calculate_credits_if_salary_is_20000_should_return_exception(self):
         with pytest.raises(Exception):
             salary = 20000
