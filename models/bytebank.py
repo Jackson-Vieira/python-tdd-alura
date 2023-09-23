@@ -43,7 +43,7 @@ class Employee:
     def calculate_credits(self):
         result = self._salary * 0.1
         if result > 1000:
-            result = 0
+            raise Exception("Very high salary")
         return result
 
     def __str__(self):
