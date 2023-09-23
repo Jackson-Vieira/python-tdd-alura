@@ -1,4 +1,4 @@
-from bytebank import Employee 
+from models.bytebank import Employee 
 
 def main():
     employee = Employee('Joao', '11/11/2005', 1000)
