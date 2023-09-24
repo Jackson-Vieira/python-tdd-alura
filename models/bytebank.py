@@ -1,15 +1,12 @@
 from datetime import date, datetime
 
-def string_to_date(date):
-    return datetime.strptime(date, "%m/%d/%Y")
-
 def hydrate_string(string: str):
     return string.strip()
 
 class Employee:
     def __init__(self, full_name, birth_date, salary):
         self._full_name = hydrate_string(full_name)
-        self._birth_date = string_to_date(birth_date)
+        self._birth_date = birth_date 
         self._salary = salary
     
     @property
@@ -36,9 +33,14 @@ class Employee:
     
     # calculate the age of the employee
     def age(self):
+
         def getCurrentYear():
             return date.today().year
-        return getCurrentYear() - self._birth_date.year
+        
+        def getBirthYear():
+            return int(self._birth_date.split("/")[-1])
+        
+        return getCurrentYear() - getBirthYear()
     
     def calculate_credits(self):
         result = self._salary * 0.1

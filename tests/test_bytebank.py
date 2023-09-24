@@ -5,6 +5,16 @@ class TestBytebank:
     def test_age_when_input_is_valid(self):
         employee = Employee('John', '11/11/2000', 1000)
         assert employee.age() == 23
+    
+    def test_get_full_name(self):
+        name = 'Jhon Doe Serafim'
+        result = 'Jhon Doe Serafim'
+        employee = Employee(name, '11/11/2000', 1000)
+        assert employee.full_name == result
+    
+    def test_print_instance(self):
+        employee = Employee('Jhon Doe', '11/11/2000', 1000)
+        assert str(employee) == 'Funcionario(Jhon Doe, 11/11/2000, 1000)'        
 
     @pytest.mark.calculate_credits 
     def test_calculate_credits(self):
