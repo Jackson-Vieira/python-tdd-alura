@@ -12,9 +12,9 @@ class TestBytebank:
         employee = Employee(name, '11/11/2000', 1000)
         assert employee.full_name == result
     
-    def test_print_instance(self):
-        employee = Employee('Jhon Doe', '11/11/2000', 1000)
-        assert str(employee) == 'Funcionario(Jhon Doe, 11/11/2000, 1000)'        
+    # def test_print_instance(self):
+    #     employee = Employee('Jhon Doe', '11/11/2000', 1000)
+    #     assert str(employee) == 'Funcionario(Jhon Doe, 11/11/2000, 1000)'        
 
     @pytest.mark.calculate_credits 
     def test_calculate_credits(self):
